@@ -9,8 +9,9 @@
 
 function palindrome(str) {
 
-  const reversedString = str.split('').reverse().join('');
-  return str === reversedString;
+  return str.split('').every((char, i) => {
+    return char === str[str.length - 1 - i];
+  });
 }
 
 module.exports = palindrome;
@@ -34,3 +35,7 @@ module.exports = palindrome;
 //   counter++;
 // }
 // return true;
+
+// -##- SOLUTION USING REVERSE IN-BUILT METHOD -##-
+// const reversedString = str.split('').reverse().join('');
+// return str === reversedString;
